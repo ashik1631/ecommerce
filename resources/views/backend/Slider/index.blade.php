@@ -35,12 +35,30 @@
                     </tr>
                 </thead>
               <tbody>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+               @foreach ($slider as $item)
+
+               <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>
+                    <img src="{{ asset('uploads/slider/' .$item->image) }}" width="50" alt="photo">
+                </td>
+                <td>{{ $item->title }}</td>
+                <td>{{ $item->link }}</td>
+                <td>
+                    @if ($item->status==1)
+                    <span class="badge badge-success">Publish</span>
+                    @else
+                    <span class="badge badge-danger">Unpublish</span>
+                    @endif
+                </td>
+
+                <td>
+                    <a href="#" class=" btn btn-primary">Edit</a>
+                    <a href="#" class=" btn btn-danger">Dlete</a>
+                </td>
+               </tr>
+
+               @endforeach
               </tbody>
             </table>
         </div>

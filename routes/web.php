@@ -29,4 +29,5 @@ Route::prefix('admin/')->name('admin.')->group(function(){
 //slider route
     Route::get('slider',[sliderController::class,'index'])->name('slider.index');
     Route::get('slider/create',[sliderController::class,'create'])->name('slider.create');
+    Route::post('slider/store',[sliderController::class,'store'] )->name('slider.store');
 });

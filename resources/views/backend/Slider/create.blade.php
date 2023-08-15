@@ -25,14 +25,18 @@
                 <div class="content_section">
                     <h5>Create Slider Form</h5>
                     <hr>
-                    <form action="">
+
+                    @include('layouts.message')
+
+                    <form action="{{ route('admin.slider.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label for="title">title</label>
-                            <input type="text" name="title" class="form-control" placeholder="Enter your title">
+                            <input type="text" name="title" value="{{ old('title') }}" class="form-control" placeholder="Enter your title">
                         </div>
                         <div class="form-group">
                             <label for="link">link</label>
-                            <input type="text" name="link" class="form-control" placeholder="Enter your link">
+                            <input type="text" name="link" value="{{ old('link') }}" class="form-control" placeholder="Enter your link">
                             <div class="form-group">
                                 <label for="status">status</label>
                                <select name="" class="form-control">
