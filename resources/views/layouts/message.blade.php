@@ -11,7 +11,7 @@
                     <!--validation end-->
 
                     @if (Session::has('message'))
-                        <div class="alert alert-{{ session('type') === 'success' ? 'success' : 'danger' }}">
-                            {{ Session()->get('message') }}
+                        <div class="alert alert-{{ session('type')==='success' ? 'success': 'danger' }}">
+                            {{ Session::get('message') }}
                         </div>
                     @endif

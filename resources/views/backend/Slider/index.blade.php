@@ -3,6 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <!-- breadcame start -->
+    @include('layouts.message')
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
@@ -52,9 +53,13 @@
                     @endif
                 </td>
 
-                <td>
-                    <a href="#" class=" btn btn-primary">Edit</a>
-                    <a href="#" class=" btn btn-danger">Dlete</a>
+                <td class="d-flex">
+                    <a href="{{ route('admin.slider.edit', $item->id) }}" class=" btn btn-primary">Edit</a>
+                    <form action="{{ route('admin.slider.delete',$item->id) }}" method="POST">
+                     @csrf
+                     @method('DELETE')
+                     <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
                </tr>
 

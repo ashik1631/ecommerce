@@ -4,9 +4,8 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session as FacadesSession;
+use Illuminate\Support\Facades\Session;
 
 class sliderController extends Controller
 {
@@ -40,14 +39,45 @@ class sliderController extends Controller
 
         Slider:: create($data);
         //Message....
-        /*
-        Session::flash('message','success');
-        Session::flash('message', 'Not-success');
-          */
+
+        Session::flash('type','success');
+        Session::flash('message', 'success');
+
 
         return redirect()->back();
     } catch (\Throwable $th) {
         //throw $th;
     }
+   }
+
+   public function edit($id){
+    $slider=Slider::findOrFail($id);
+    return view('backend.Slider.edit',compact('slider'));
+   }
+
+   public function update(Request $request,$id){
+
+    $request->validate([
+
+        'title'=>'required',
+        'link'=>'nullable|url',
+    ]);
+
+    $slider=Slider::findOrFail($id);
+    $slider->title = $request->title;
+    $slider->link = $request->link;
+    $slider->update();
+    Session::flash('type','success');
+    Session::flash('message', 'success');
+    return redirect()->back();
+
+/*in one line code forupdate;
+Slider::findOrFail($id)->update($request->all());
+*/
+   }
+   public function delete($id){
+    Slider::findOrFail($id)->delete();
+    Session::flash('message', 'data delete success');
+    return redirect()->back();
    }
 }
