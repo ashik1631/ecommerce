@@ -39,9 +39,9 @@
                             <input type="text" name="link" value="{{ old('link') }}" class="form-control" placeholder="Enter your link">
                             <div class="form-group">
                                 <label for="status">status</label>
-                               <select name="" class="form-control">
-                                <option value="1">publish</option>
-                                <option value="0">unpublish</option>
+                               <select name="status" class="form-control">
+                                <option {{ old('status')==1 ? 'selected': ''}} value="1">publish</option>
+                                <option {{ old('status')==0 ? 'selected': ''}} value="0">unpublish</option>
                                </select>
                             </div>
                             <div class="form-group">
