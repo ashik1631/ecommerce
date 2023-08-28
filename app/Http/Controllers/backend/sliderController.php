@@ -37,7 +37,7 @@ class sliderController extends Controller
             $extension = $file->getClientOriginalExtension();
             $photoName = time() . '.' . $extension;
             $file->move(public_path('uploads/slider/'), $photoName);
-            $data['image'] = 'uploads/slider/' .$photoName;
+            $data['image'] = 'uploads/slider/' . $photoName;
             //image uploadend
 
             Slider::create($data);
@@ -79,7 +79,7 @@ class sliderController extends Controller
             $extension = $file->getClientOriginalExtension();
             $photoName = time() . '.' . $extension;
             $file->move(public_path('uploads/slider/'), $photoName);
-            $slider->image = 'uploads/slider/' .$photoName;
+            $slider->image = 'uploads/slider/' . $photoName;
         }
         $slider->update();
         Session::flash('type', 'success');
@@ -92,7 +92,9 @@ Slider::findOrFail($id)->update($request->all());
     }
     public function destroy($id)
     {
-        $slider=Slider::findOrFail($id)->destroy();
+        $slider = Slider::findOrFail($id);
+        unlink(public_path($slider->image));
+        $slider->delete();
         Session::flash('message', 'data delete success');
         return redirect()->back();
     }
