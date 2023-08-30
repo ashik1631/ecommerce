@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\dashboardController;
 use App\Http\Controllers\backend\sliderController;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,8 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     //one line rout
     Route::get('dashboard', [dashboardController::class, 'index'])->name('dashboard');
     //slider route
-    Route::resource('slider',sliderController::class);
-        /* full route
+    Route::resource('slider', sliderController::class);
+    /* full route
     Route::get('slider', [sliderController::class, 'index'])->name('slider.index');
     Route::get('slider/create', [sliderController::class, 'create'])->name('slider.create');
     Route::post('slider/store', [sliderController::class, 'store'])->name('slider.store');
@@ -37,4 +38,6 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     Route::put('slider/update/{id}', [sliderController::class, 'update'])->name('slider.update');
     Route::delete('slider/delete/{id}', [sliderController::class, 'delete'])->name('slider.delete');
     */
+    //category route
+    Route::resource('category', CategoryController::class);
 });

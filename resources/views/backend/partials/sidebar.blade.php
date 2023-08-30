@@ -18,6 +18,11 @@
                         class="fa fa-fw fa-rocket text-warning"></i>
                     <span class="mx-2">Slider</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('admin.category.index') ? 'active' : '' }}" href="{{ route('admin.category.index') }}"><i
+                        class="fa fa-fw fa-rocket text-warning"></i>
+                    <span class="mx-2">Category</span></a>
+            </li>
         </ul>
     </nav>
 </div>
