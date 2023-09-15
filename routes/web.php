@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\dashboardController;
+use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\sliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +41,7 @@ Route::prefix('admin/')->name('admin.')->group(function () {
     */
     //category route
     Route::resource('category', CategoryController::class);
+
+    //product route
+    Route::resource('product', ProductController::class);
 });

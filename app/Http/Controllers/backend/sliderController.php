@@ -30,6 +30,7 @@ class sliderController extends Controller
         ]);
 
         try {
+            //one line requist
             $data = $request->all();
 
             //image upload...
@@ -69,6 +70,7 @@ class sliderController extends Controller
             'status' => 'required',
             'image' => 'nullable|mimes:png,jpg,jpeg',
         ]);
+        //multiline requist
         $slider = Slider::findOrFail($id);
         $slider->title = $request->title;
         $slider->link = $request->link;
