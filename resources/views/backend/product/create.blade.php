@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-10 offset-md-1">
             <div class="basic_form my-4">
                 <div class="content_section">
                     <h5>Create product Form</h5>
@@ -48,16 +48,16 @@
                             <input type="number" name="price" value="{{ old('price') }}" class="form-control" placeholder="Enter your product price">
                         </div>
                         <div class="form-group">
-                            <label for="discount">product Discount [optional]}</label>
+                            <label for="discount">product Discount [optional]</label>
                             <input type="number" name="discount" value="{{ old('discount') }}" class="form-control" placeholder="Enter your product discount">
                         </div>
                         <div class="form-group">
                             <label for="short_desc">product Short Description}</label>
-                           <textarea name="short_desc" cols="30" rows="4" class="from-control">value="{{ old('short_desc') }}"</textarea>
+                           <textarea name="short_desc" cols="30" rows="4" class="from-control">{{ old('short_desc') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="long_desc">product Long Description}</label>
-                           <textarea name="long_desc" cols="30" rows="7" class="from-control">value="{{ old('long_desc') }}"</textarea>
+                           <textarea name="long_desc" cols="30" rows="7" class="from-control">{{ old('long_desc') }}</textarea>
                         </div>
                             <div class="form-group">
                                 <label for="status">status</label>
@@ -72,17 +72,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="multiple-image">multiple-image</label>
-                                <input type="file" name="multiple-image" multiple class="form-control" placeholder="select your multiple-image">
+                                <input type="file" name="multiple_image[]" multiple class="form-control" placeholder="select your multiple-image">
                             </div>
                             <div class="form-group">
-                                <label for="new product" name="new_product" class="from-control">new product</label>
-                                <option value="1">Publish</option>
-                                <option value="0">Unpublish</option>
+                                <label for="new product">new product</label>
+                                <select name="new_product" class="from-control">
+                                    <option value="1">Publish</option>
+                                    <option value="0">Unpublish</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="feature_product" name="feature_product" class="from-control">feature_product</label>
-                                <option value="1">Publish</option>
-                                <option value="0">Unpublish</option>
+                                <label for="feature_product">feature_product</label>
+                                <select name="feature_product" class="from-control">
+                                    <option value="1">Publish</option>
+                                    <option value="0">Unpublish</option>
+                                </select>
                             </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Submit">

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('short_desc');
             $table->longText('long_desc');
             $table->string('thumbnail');
-            $table->json('multiple-image');
+            $table->json('multiple_image');
             $table->enum('new_product', ['1', '0'])->default('0');
             $table->enum('feature_product', ['1', '0'])->default('0');
             $table->enum('status', ['1', '0'])->default('1');

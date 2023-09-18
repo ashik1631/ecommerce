@@ -18,7 +18,7 @@ class product extends Model
         'short_desc',
         'long_desc',
         'thumbnail',
-        'multiple-image',
+        'multiple_image',
         'new_product',
         'feature_product',
         'status'
@@ -26,6 +26,6 @@ class product extends Model
     ];
     public function cate()
     {
-      return $this->belongsTo(category::class, 'cate_id');
+        return $this->belongsTo(category::class, 'cate_id');
     }
 }

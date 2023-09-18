@@ -33,6 +33,7 @@
                     <tr>
                         <th>Sl.Num</th>
                         <th>Thumbnail</th>
+                        <th>multiple_image</th>
                         <th>Product name</th>
                         <th>Price</th>
                         <th>Discount</th>
@@ -47,6 +48,9 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>
                             <img src="{{ asset($item->thumbnail) }}" width="100" alt="thumbnail">
+                        </td>
+                        <td>
+                            <img src="{{ asset($item->multiple_image)}}" width="40" alt="multiple_image">
                         </td>
                         <td>{{ $item->name}}</td>
                         <td>{{ $item->price}}</td>
