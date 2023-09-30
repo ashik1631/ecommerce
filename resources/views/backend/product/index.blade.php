@@ -32,8 +32,8 @@
                 <thead>
                     <tr>
                         <th>Sl.Num</th>
-                        <th>Thumbnail</th>
-                        <th>multiple_image</th>
+                        <th width='10%'>Thumbnail</th>
+                        <th width='10%'>multiple_image</th>
                         <th>Product name</th>
                         <th>Price</th>
                         <th>Discount</th>
@@ -50,7 +50,14 @@
                             <img src="{{ asset($item->thumbnail) }}" width="100" alt="thumbnail">
                         </td>
                         <td>
-                            <img src="{{ asset($item->multiple_image)}}" width="40" alt="multiple_image">
+                            @php
+                                $multiple_image=json_decode($item->multiple_image);
+                            @endphp
+                            @foreach ($multiple_image as $img)
+
+                            <img src="{{ asset($img)}}" width="40" alt="multiple_image">
+
+                            @endforeach
                         </td>
                         <td>{{ $item->name}}</td>
                         <td>{{ $item->price}}</td>

@@ -58,14 +58,14 @@ class ProductController extends Controller
 
             //Multi-image upload...
             $images = [];
-            foreach ($request['multiple_image'] as  $image) {
-                $multi_img_ext = $image->getClientOriginalExtension();
-                $multi_img_name = time() . strtolower(Str::random(10)) . '.' . $multi_img_ext;
-                $image->move(public_path('uploads/product/'), $multi_img_name);
-                $images[] = 'uploads/product/' . $multi_img_name;
+            foreach ($request['multiple_image'] as $image) {
+                $mul_img_ext = $image->getClientOriginalExtension();
+                $mul_img_name = time() . strtolower(Str::random(10)) . '.' . $mul_img_ext;
+                $image->move(public_path('uploads/product/'), $mul_img_name);
+                $images[] = 'uploads/product/' . $mul_img_name;
             }
             //Multi image upload end
-            $data['multiple_image'] = json_encode('$images');
+            $data['multiple_image'] = json_encode($images);
             $data['slug'] = Str::slug($data['name']);
             Product::create($data);
             //Message....
@@ -80,19 +80,12 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(product $product)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(product $product)
     {
-        return view('backend.product.edit', compact('product'));
+        $category = Category::whereStatus('1')->get();
+        return view('backend.product.edit', compact('product', 'category'));
     }
 
     /**
@@ -100,7 +93,52 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        $request->validate([
+            'cate_id' => 'nullable',
+            'name' => 'required',
+            'slug' => 'nullable',
+            'price' => 'required|integer',
+            'discount' => 'nullable|integer',
+            'short_desc' => 'required',
+            'long_desc' => 'required',
+            'thumbnail' => 'nullable|mimes:png,jpg,jpeg',
+            'multiple_image.*' => 'nullable|mimes:png,jpg,jpeg',
+        ]);
+
+        $product->name = $request->name;
+        $product->status = $request->status;
+        $product->price = $request->price;
+        $product->discount = $request->discount;
+        $product->short_desc = $request->short_desc;
+        $product->long_desc = $request->long_desc;
+        $file = $request->file('thumbnail');
+
+        if (!empty($file)) {
+            unlink(public_path($product->thumbnail));
+            $extension = $file->getClientOriginalExtension();
+            $photoName = time() . '.' . $extension;
+            $file->move(public_path('uploads/product/'), $photoName);
+            $product->thumbnail = 'uploads/product/' . $photoName;
+        }
+        if (!empty($file)) {
+            $images = [];
+            foreach ($request['multiple_image'] as $image) {
+                $mul_img_ext = $image->getClientOriginalExtension();
+                $mul_img_name = time() . strtolower(Str::random(10)) . '.' . $mul_img_ext;
+                $multiple_image = json_decode($product->multiple_image);
+                foreach ($multiple_image as $img) {
+                    unlink(public_path($img));
+                }
+                $image->move(public_path('uploads/product/'), $mul_img_name);
+                $images[] = 'uploads/product/' . $mul_img_name;
+            }
+            $product->multiple_image = json_encode($images);
+        }
+        $product->slug = Str::slug($product['name']);
+        $product->update();
+        Session::flash('type', 'success');
+        Session::flash('message', 'success');
+        return redirect()->back();
     }
 
     /**
@@ -108,6 +146,13 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+        unlink(public_path($product->thumbnail));
+        $multiple_image = json_decode($product->multiple_image);
+        foreach ($multiple_image as $img) {
+            unlink(public_path($img));
+        }
+        $product->delete();
+        Session::flash('message', 'data delete success');
+        return redirect()->back();
     }
 }
