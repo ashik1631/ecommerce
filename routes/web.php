@@ -4,20 +4,25 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\dashboardController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\sliderController;
+use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 
 //frontend routes
+//basic route
+/*
 Route::get('/', function () {
     return view('layouts.frontend');
 });
+*/
 
-/*bacend routes for practis
+/*backend routes for practis
 Route::get('/admin/dashboard', function(){
 
 return view('backend.dashboard');
 });*/
 
+Route::get('/', [FrontendController::class, 'index'])->name('home');
 /* Normal routhe
 Route::get('/admin/dashboard',[dashboardController::class,'index'])->name('dashboard');
 

@@ -55,7 +55,7 @@
                             @endphp
                             @foreach ($multiple_image as $img)
 
-                            <img src="{{ asset($img)}}" width="40" alt="multiple_image">
+                            <img src="{{ asset($img)}}" width="40" class="m-2" alt="multiple_image">
 
                             @endforeach
                         </td>
