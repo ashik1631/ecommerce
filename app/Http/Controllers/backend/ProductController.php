@@ -43,7 +43,7 @@ class ProductController extends Controller
             'short_desc' => 'required',
             'long_desc' => 'required',
             'thumbnail' => 'required|mimes:png,jpg,jpeg',
-            'multiple_image.*' => 'required|mimes:png,jpg,jpeg',
+            'multiple_image.*' => 'required|mimes:png,jpg,jpeg|max:2000',
         ]);
         try {
             $data = $request->all();
@@ -102,7 +102,7 @@ class ProductController extends Controller
             'short_desc' => 'required',
             'long_desc' => 'required',
             'thumbnail' => 'nullable|mimes:png,jpg,jpeg',
-            'multiple_image.*' => 'nullable|mimes:png,jpg,jpeg',
+            'multiple_image.*' => 'nullable|mimes:png,jpg,jpeg|max:2000',
         ]);
 
         $product->name = $request->name;

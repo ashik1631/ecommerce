@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Slider::factory(8)->create();
         category::factory(12)->create();
-        product::factory(60)->create();
+        product::factory(19)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
