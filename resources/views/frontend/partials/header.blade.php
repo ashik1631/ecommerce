@@ -61,7 +61,7 @@
                         <div class="row position-relative">
                             <!-- navbar logo start -->
                             <div id="logo" class="col-lg-2 col-6 ">
-                                <a class="navbar-brand" href="index.html"><img class="img-fluid" src="{{ asset('assets/frontend/img/logo/Untitled-2.png') }}" alt="logo"></a>
+                                <a class="navbar-brand" href="{{ route('home') }}"><img class="img-fluid" src="{{ asset('assets/frontend/img/logo/Untitled-2.png') }}" alt="logo"></a>
                             </div>
                             <!-- navbar logo end -->
 
@@ -248,7 +248,7 @@
                             <a href="#">SPECIAL OFFER</a>
                         </div>
                         <ul>
-                            <li><a class="active" href="#">HOME</a></li>
+                            <li><a class="active" href="{{ route('home') }}">HOME</a></li>
                             <li><a class="active" href="#">About</a></li>
                             <li><a class="active" href="#">Contact</a></li>
                         </ul>
