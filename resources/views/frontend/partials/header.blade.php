@@ -154,13 +154,16 @@
                                             <i class="las la-search la-flip-horizontal la-2x"></i>
                                         </a>
                                     </li>
+                                    @php
+                                        $carts = \Session::has('cart') ? session('cart'):[];
+                                    @endphp
                                     <!-- search-bar btn end -->
                                     <!-- add to cart start -->
                                     <li><a href="javascript:;">
                                             <div class="d-flex align-items-center">
                                                 <span><i class="la la-shopping-cart la-2x opacity-80"></i></span>
                                                 <div class="text-start ms-lg-1">
-                                                    <p class="m-0 qty">5</p>
+                                                    <p class="m-0 qty">{{ count($carts) }}</p>
                                                     <p class="m-0 title">Cart</p>
                                                 </div>
                                             </div>
@@ -173,52 +176,25 @@
                                                 <hr class="mb-0">
                                             </div>
                                             <!--single product list start -->
-                                            <div class="row mt-3">
+                                            @foreach ($carts as $item)
+                                             <div class="row mt-3">
                                                 <div class="col-4">
-                                                    <img class="img-fluid border" src="{{ asset('assets/frontend/img/product/9.jpg') }}" alt="product">
+                                                    <img class="img-fluid border" src="{{ asset($item['thumb']) }}" alt="product">
                                                 </div>
                                                 <div class="col-6 p-0">
                                                     <div class="product__list__content">
-                                                        <h5>Smart Watch for Man</h5>
-                                                        <p>2 x $255</p>
+                                                        <h5>{{ $item['name'] }}</h5>
+                                                        <p>2 x ${{$item['price']}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
                                                     <button class="product__delete__btn">x</button>
                                                 </div>
                                             </div>
+                                                
+                                            @endforeach
                                             <!--single product list end -->
                                             <!--single product list start -->
-                                            <div class="row mt-3">
-                                                <div class="col-4">
-                                                    <img class="img-fluid border" src="{{ asset('assets/frontend/img/product/10.jpg') }}" alt="product">
-                                                </div>
-                                                <div class="col-6 p-0">
-                                                    <div class="product__list__content">
-                                                        <h5>Ladies Hand Bag</h5>
-                                                        <p>2 x $255</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-2">
-                                                    <button class="product__delete__btn">x</button>
-                                                </div>
-                                            </div>
-                                            <!--single product list end -->
-                                            <!--single product list start -->
-                                            <div class="row mt-3">
-                                                <div class="col-4">
-                                                    <img class="img-fluid border" src="{{ asset('assets/frontend/img/product/12.jpg') }}" alt="product">
-                                                </div>
-                                                <div class="col-6 p-0">
-                                                    <div class="product__list__content">
-                                                        <h5>Fashion Shoes for Man</h5>
-                                                        <p>2 x $255</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-2">
-                                                    <button class="product__delete__btn">x</button>
-                                                </div>
-                                            </div>
                                             <!--single product list end -->
                                             <hr>
                                             <div class="total">

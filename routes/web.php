@@ -23,6 +23,8 @@ return view('backend.dashboard');
 });*/
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
+
+Route::get('/add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('addToCart');
 /* Normal routhe
 Route::get('/admin/dashboard',[dashboardController::class,'index'])->name('dashboard');
 
