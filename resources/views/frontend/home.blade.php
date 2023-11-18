@@ -151,7 +151,7 @@
                                 <a href="#" title="Compare"><i class="las la-sync"></i></a>
                             </div>
                             <div class="card_icon text-end">
-                                <a href="{{ route ('addToCart', $item->id) }}" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Cart"><i
+                                <a href="{{ route('addToCart',$item->id) }}" title="Cart"><i
                                         class="las la-shopping-cart"></i></a>
                             </div>
                         </div>

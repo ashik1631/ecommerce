@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\product;
 use App\Models\Slider;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Brian2694\Toastr\Facades\Toastr;
 
 class FrontendController extends Controller
 {
@@ -23,7 +23,7 @@ class FrontendController extends Controller
     public function addToCart($id)
     {
         $product = product :: findorfail($id);
-        $cart = Session :: has('cart') ? session ('cart') : [];
+        $cart = Session:: has('cart') ? session ('cart') : [];
         $cart []=[
             'id' => $product->id,
             'qty' =>1,
@@ -34,7 +34,7 @@ class FrontendController extends Controller
         ];
 
         Session::put('cart', $cart);
-        Toastr::success('Add to cart', 'Success');
+        Toastr::success('add-to-cart', 'Success');
         return redirect()->back();
 
     }

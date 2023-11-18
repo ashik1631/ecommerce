@@ -191,7 +191,7 @@
                                                     <button class="product__delete__btn">x</button>
                                                 </div>
                                             </div>
-                                                
+
                                             @endforeach
                                             <!--single product list end -->
                                             <!--single product list start -->
