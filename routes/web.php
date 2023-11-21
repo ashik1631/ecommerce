@@ -25,6 +25,10 @@ return view('backend.dashboard');
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 Route::get('/add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('addToCart');
+Route::get('/cart-remove/{id}', [FrontendController::class, 'cartRemove'])->name('cart.remove');
+Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+
+
 /* Normal routhe
 Route::get('/admin/dashboard',[dashboardController::class,'index'])->name('dashboard');
 
