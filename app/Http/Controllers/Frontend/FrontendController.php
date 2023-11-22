@@ -53,4 +53,12 @@ class FrontendController extends Controller
     public function checkout(){
         return view('Frontend.checkout');
     }
+
+    public function contact(){
+        return view('Frontend.contact');
+    }
+    public function about(){
+        return view('Frontend.about');
+    }
+
 }

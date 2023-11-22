@@ -46,7 +46,7 @@
                                         <span>My Account</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i>
                                         <span>My Card</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>
                                         <span>Login</span></a></li>
                             </ul>
                             <!-- header right utility end -->
@@ -249,8 +249,8 @@
                     </div>
                     <ul>
                         <li><a class="active" href="{{ route('home') }}">HOME</a></li>
-                        <li><a class="active" href="#">About</a></li>
-                        <li><a class="active" href="#">Contact</a></li>
+                        <li><a class="active" href="{{route('about')}}">About</a></li>
+                        <li><a class="active" href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                     <!-- categories for sm/md device end -->
 </header>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\Authcontroller;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\dashboardController;
 use App\Http\Controllers\backend\ProductController;
@@ -27,6 +28,10 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('addToCart');
 Route::get('/cart-remove/{id}', [FrontendController::class, 'cartRemove'])->name('cart.remove');
 Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+Route::get('/login', [Authcontroller::class, 'login'])->name('login');
+Route::get('/register', [Authcontroller::class, 'register'])->name('register');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
 
 
 /* Normal routhe

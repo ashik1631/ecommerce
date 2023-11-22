@@ -6,7 +6,7 @@
         <!-- container area start -->
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-primary" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-primary" href="{{ route('home') }}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Checkout</li>
             </ol>
         </div>
