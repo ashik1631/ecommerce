@@ -32,6 +32,7 @@ Route::get('/login', [Authcontroller::class, 'login'])->name('login');
 Route::get('/register', [Authcontroller::class, 'register'])->name('register');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::post('/customer/store', [Authcontroller::class, 'store']);
 
 
 /* Normal routhe

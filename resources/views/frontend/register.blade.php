@@ -25,22 +25,23 @@
                 <div class="col-lg-6 mx-auto">
                     <div class="card login_form p-4 shadow">
                         <h3>Create an account with</h3>
-                        <form action="#">
+                        <form action="{{url('/customer/store')}}" method="POST">
+                        @csrf
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="input-group login mb-4">
                                         <span class="input-group-text text-muted" ><i class="las la-user fa-2x"></i></span>
-                                        <input type="text" class="form-control form-control-lg rounded-0"  placeholder="Name">
+                                        <input type="text" name="name" required class="form-control form-control-lg rounded-0"  placeholder="Name">
                                       </div>
                                 </div>
                             </div>
                             <div class="input-group login mb-4">
                                 <span class="input-group-text text-muted" ><i class="las la-envelope la-2x"></i></span>
-                                <input type="email" class="form-control form-control-lg rounded-0"  placeholder="user@gmail.com">
+                                <input type="email" name="email" required class="form-control form-control-lg rounded-0"  placeholder="user@gmail.com">
                               </div>
                             <div class="input-group login mb-3">
                                 <span class="input-group-text text-muted" ><i class="las la-lock la-2x"></i></span>
-                                <input type="password" class="form-control form-control-lg border-end-0"  placeholder="Password">
+                                <input type="password" name="password" required class="form-control form-control-lg border-end-0"  placeholder="Password">
                                 <span class="input-group-text text-muted" ><i class="las la-eye-slash la-2x"></i></span>
                               </div>
                               <div class="d-flex justify-content-between mb-4 rem__for">

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Brian2694\Toastr\Facades\Toastr;
 
 class Authcontroller extends Controller
 {
@@ -28,7 +31,18 @@ class Authcontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required',
+
+        ]);
+        $data = $request->all();
+        $data['role']= 1;
+        $data ['password'] = Hash::make($request->password);
+        User::create($data);
+        Toastr::success('Register', 'Success');
+        return redirect()->back();
     }
 
     /**
