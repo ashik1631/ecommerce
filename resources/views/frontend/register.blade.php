@@ -25,6 +25,7 @@
                 <div class="col-lg-6 mx-auto">
                     <div class="card login_form p-4 shadow">
                         <h3>Create an account with</h3>
+                        @include('layouts.message')
                         <form action="{{url('/customer/store')}}" method="POST">
                         @csrf
                             <div class="row">

@@ -42,12 +42,25 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-truck"></i>
                                         <span>Order Track</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-user-circle"></i>
-                                        <span>My Account</span></a></li>
+                                        @if (auth()->check())
+                                        @if (auth()->user()_role===0)
+                                        <li class="nav-item"><a class="nav-link" href="{{route('admin.deashboard')}}"><i class="far fa-user-circle"></i>
+                                            <span>My Deashboard</span></a></li>
+                                        @else
+                                        <li class="nav-item"><a class="nav-link" href="{{route('profiles')}}"><i class="far fa-user-circle"></i>
+                                            <span>My Account</span></a></li>
+                                        @endif
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-sign-in-alt"></i>
+                                            <span>Logout</span></a></li>
+                                        @endif
+
                                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i>
                                         <span>My Card</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>
-                                        <span>Login</span></a></li>
+                                        @guest
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>
+                                            <span>Login</span></a></li>
+                                        @endguest
+
                             </ul>
                             <!-- header right utility end -->
                         </div>

@@ -22,18 +22,21 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card login_form p-4 shadow">
                     <h3>Login to your account</h3>
-                    <form action="#">
+                    @include('layouts.message')
+
+                    <form action="{{ url('/logins') }}" method="POST">
+                        @csrf
                         <div class="input-group login mb-4">
                             <span class="input-group-text text-muted" id="inputGroup-sizing-default1"><i
                                     class="las la-envelope la-2x"></i></span>
-                            <input type="text" class="form-control form-control-lg rounded-0"
+                            <input type="text" name="email" required class="form-control form-control-lg rounded-0"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default2"
                                 placeholder="user@gmail.com">
                         </div>
                         <div class="input-group login mb-3">
                             <span class="input-group-text text-muted" id="inputGroup-sizing-default2"><i
                                     class="las la-lock la-2x"></i></span>
-                            <input type="password" class="form-control form-control-lg border-end-0"
+                            <input type="password" name="password" required class="form-control form-control-lg border-end-0"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default1"
                                 placeholder="Password">
                             <span class="input-group-text text-muted" id="inputGroup-sizing-default3"><i

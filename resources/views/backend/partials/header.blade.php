@@ -209,7 +209,7 @@
                                         <i class="far fa-life-ring text-warning"></i> <span class="mx-2">Support</span>
                                     </a></li>
                                 <hr class="m-0">
-                                <li><a href="#">
+                                <li><a href="{{route('logout')}}">
                                         <i class="fas fa-sign-out-alt text-danger"></i> <span class="mx-2">Logout</span>
                                     </a></li>
                             </ul>
