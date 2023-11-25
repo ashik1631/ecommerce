@@ -27,21 +27,23 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 
 Route::get('/add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('addToCart');
 Route::get('/cart-remove/{id}', [FrontendController::class, 'cartRemove'])->name('cart.remove');
-Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
 Route::get('/register', [Authcontroller::class, 'register'])->name('register');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/profile', [Authcontroller::class, 'profiles'])->name('profiles');
     Route::get('/user/logout', [Authcontroller::class, 'logout'])->name('logout');
+    Route::get('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+    Route::post('/order', [FrontendController::class, 'order'])->name('order');
 
 });
 
 Route::middleware(['guest'])->group(function(){
-    Route::get('/about', [FrontendController::class, 'about'])->name('about');
+
     Route::post('/customer/store', [Authcontroller::class, 'store']);
-    Route::post('/logins', [Authcontroller::class, 'logins']);
     Route::get('/login', [Authcontroller::class, 'login'])->name('login');
+    Route::post('/logins', [Authcontroller::class, 'logins']);
 
 });
 

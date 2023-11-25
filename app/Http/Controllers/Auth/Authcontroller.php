@@ -43,7 +43,7 @@ class Authcontroller extends Controller
         $data ['password'] = Hash::make($request->password);
         User::create($data);
         Toastr::success('Register', 'Success');
-        return redirect()->back();
+        return redirect()->route('login');
     }
 
     /**
@@ -53,7 +53,7 @@ class Authcontroller extends Controller
     {
         $request->validate([
 
-            'email'=>'required|email|unique:users,email',
+            'email'=>'required|email|email',
             'password'=>'required',
 
         ]);

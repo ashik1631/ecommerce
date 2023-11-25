@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\cart;
 use App\Models\category;
+use App\Models\order;
 use App\Models\product;
 use App\Models\Slider;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
 
 class FrontendController extends Controller
 {
@@ -59,6 +60,50 @@ class FrontendController extends Controller
     }
     public function about(){
         return view('Frontend.about');
+    }
+
+    public function order(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'requried',
+            'shipping_address'=>'required',
+            'payment_methode'=>'requried',
+
+        ]);
+        $data = $request->all();
+        unset($data['_token']);
+        $data['order_status'] = 'processing';
+        $data['price'] = $this ->cart_info();
+
+        $order = order::create($data);
+
+        cart::create ([
+            'order_id'=> $order->id,
+            'carts' => json_encode(Session::has('cart') ? session('cart'):[])
+
+        ]);
+        Toastr::success('Order press', 'Success');
+        return redirect()->back();
+    }
+
+    public function cart_info(){
+        $carts = Session::has('cart') ? session('cart'):[];
+        $totalprice=0;
+        foreach ($carts as $item){
+                                
+             if ($item ['discount']){
+                                
+                $discountPrice = $item['price']*$item['discount'] / 100;
+                $price = $item['price']-$discountPrice;
+                $totalprice = $price * $item['qty'];
+                                
+
+        }else { $totalprice += $item['price']* $item['qty']; }
+     }  
+
+     return $totalprice;     
+                                
     }
 
 }
