@@ -54,7 +54,7 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="mb-3">
-                                                        <input type="text" name="phone" required class="form-control rounded-0"
+                                                        <input type="number" name="phone" required class="form-control rounded-0"
                                                             placeholder="Phone number">
                                                     </div>
                                                 </div>
@@ -87,7 +87,7 @@
                             $carts = \Session::has('cart') ? session('cart'):[];
                             $totalprice=0;
                             @endphp
-                            
+
                             @foreach ($carts as $item)
                             <div class="row mt-3">
                                 <div class="col-4">

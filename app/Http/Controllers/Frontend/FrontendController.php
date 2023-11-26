@@ -63,16 +63,15 @@ class FrontendController extends Controller
     }
 
     public function order(Request $request){
-        $request->validate([
+        $request->validate ([
             'name'=>'required',
             'email'=>'required|email',
-            'phone'=>'requried',
+            'phone'=>'required',
             'shipping_address'=>'required',
-            'payment_methode'=>'requried',
+            'payment_methode'=>'required',
 
         ]);
         $data = $request->all();
-        unset($data['_token']);
         $data['order_status'] = 'processing';
         $data['price'] = $this ->cart_info();
 
@@ -83,27 +82,28 @@ class FrontendController extends Controller
             'carts' => json_encode(Session::has('cart') ? session('cart'):[])
 
         ]);
+        Session::forget('cart');
         Toastr::success('Order press', 'Success');
-        return redirect()->back();
+        return redirect()->route('profiles');
     }
 
     public function cart_info(){
         $carts = Session::has('cart') ? session('cart'):[];
         $totalprice=0;
         foreach ($carts as $item){
-                                
+
              if ($item ['discount']){
-                                
+
                 $discountPrice = $item['price']*$item['discount'] / 100;
                 $price = $item['price']-$discountPrice;
                 $totalprice = $price * $item['qty'];
-                                
+
 
         }else { $totalprice += $item['price']* $item['qty']; }
-     }  
+     }
 
-     return $totalprice;     
-                                
+     return $totalprice;
+
     }
 
 }
