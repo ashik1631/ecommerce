@@ -38,8 +38,14 @@
                                         <li><a class="active-item" href="{{route ('profiles')}}"><i class="las la-angle-double-right me-1"></i> My Profile</a></li>
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Edit Account</a></li>
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Change Password</a></li>
-                                        <li><a href="{{ route('order_details') }}"><i class="las la-angle-double-right me-1"></i> Order History</a></li>
+                                        <li><a href="{{  route('order_details') }}"><i class="las la-angle-double-right me-1"></i> My Wishlist</a></li>
+                                        <li><a href="order-history.html"><i class="las la-angle-double-right me-1"></i> Order History</a></li>
                                         <li><a href="{{  route('order_details') }}"><i class="las la-angle-double-right me-1"></i> Order Detail</a></li>
+                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Billing Agreement</a></li>
+                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Product Review</a></li>
+                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> My Application</a></li>
+                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Subscription</a></li>
+                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Order Detail</a></li>
                                         <li><a href="{{ route('logout') }}"><i class="las la-angle-double-right me-1"></i> Logout</a></li>
                                     </ul>
                                 </div>
@@ -48,40 +54,34 @@
                           </div>
                     </div>
                     <div class="col-lg-9 mt-lg-0 mt-3">
-                        <div class="cover__photo">
-                            <img class="img-fluid" src="assets/img/banner/profile-cover.png" alt="img">
-                            <div class="d-flex justify-content-between">
-                                <div class="user__title ms-3 mt-3">
-                                    <h3>{{auth()->user()->name}}</h3>
-                                    <p>{{auth()->user()->email}}</p>
-                                </div>
-                                <div class="profile__img">
-                                    <img class="img-fluid rounded-circle" src="{{ asset('assets/frontend/img/testmonial/2.jpg') }}" alt="img">
-                                </div>
-                            </div>
-                        </div>
                         <div class="profile__info bg-white rounded-1 mt-3 border shadow">
-                            <h5 class="border-bottom p-3">Personal Details</h5>
-                            <div class="card card-body border-0 rounded-0 pt-0">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <table class="table table__info">
-                                            <tbody>
-                                                <tr>
-                                                    <td>User Name</td>
-                                                    <td>:</td>
-                                                    <td>{{auth()->user()->name}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Email</td>
-                                                    <td>:</td>
-                                                    <td>{{auth()->user()->email}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                            <h5 class="border-bottom p-3">Order Details</h5>
+                            <table class="table table-borderd">
+                                <thead>
+                                    <tr>
+                                        <th>Sl.No</th>
+                                        <th>name</th>
+                                        <th>phone</th>
+                                        <th>payment_method</th>
+                                        <th>order_status</th>
+                                        <th>price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($orders as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td>{{ $item->payment_methode }}</td>
+                                        <span class="badge{{ $item->order_status =='processing' ? 'bg-danger' : 'bg-success' }}"><td>{{ $item->order_status }}</td></span>
+
+                                        <td>{{ $item->price }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+
+                            </table>
                         </div>
                     </div>
                 </div>

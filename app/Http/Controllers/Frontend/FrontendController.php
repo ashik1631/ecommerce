@@ -10,6 +10,7 @@ use App\Models\product;
 use App\Models\Slider;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
@@ -72,6 +73,7 @@ class FrontendController extends Controller
 
         ]);
         $data = $request->all();
+        $data['user_id']= Auth::id();
         $data['order_status'] = 'processing';
         $data['price'] = $this ->cart_info();
 
@@ -104,6 +106,11 @@ class FrontendController extends Controller
 
      return $totalprice;
 
+    }
+
+    public function order_details(){
+        $orders = order::where('user_id', Auth::id())->get();
+        return view('Frontend.user.order_details', compact('orders'));
     }
 
 }

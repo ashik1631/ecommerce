@@ -40,7 +40,7 @@
                                         <li><a class="dropdown-item" href="#">-Japan</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-truck"></i>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('order_details') }}"><i class="fas fa-truck"></i>
                                         <span>Order Track</span></a></li>
                                 @if (auth()->check())
                                 @if (auth()->user()->role===0)
