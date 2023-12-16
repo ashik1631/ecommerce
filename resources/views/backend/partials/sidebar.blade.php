@@ -28,6 +28,11 @@
                         class="fa fa-fw fa-rocket text-warning"></i>
                     <span class="mx-2">Product</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('admin.order.index') ? 'active' : '' }}" href="{{ route('admin.order.index') }}"><i
+                        class="fa fa-fw fa-rocket text-warning"></i>
+                    <span class="mx-2">Order</span></a>
+            </li>
         </ul>
     </nav>
 </div>

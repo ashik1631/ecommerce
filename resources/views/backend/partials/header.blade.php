@@ -64,7 +64,7 @@
                                     <div class="col-9">
                                         <div class="clearfix">
                                             <div class="float-left">
-                                                <h6>John Doe</h6>
+                                                <h6>Md. Ashik</h6>
                                             </div>
                                             <div class="float-right">
                                                 <p class="text-muted text-sm">3 hrs ago</p>

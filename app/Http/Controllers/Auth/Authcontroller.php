@@ -41,9 +41,10 @@ class Authcontroller extends Controller
         $data = $request->all();
         $data['role']= 1;
         $data ['password'] = Hash::make($request->password);
-        User::create($data);
+        $user = User::create($data);
+        Auth::login($user);
         Toastr::success('Register', 'Success');
-        return redirect()->route('login');
+        return redirect()->route('profiles');
     }
 
     /**

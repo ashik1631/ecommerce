@@ -31,8 +31,8 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Category</p>
+                                        <h5>{{ $category }}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
@@ -50,8 +50,8 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Product</p>
+                                        <h5>{{ $product }}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
@@ -69,8 +69,8 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Order Processing</p>
+                                        <h5>{{$order_process}}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
@@ -88,8 +88,8 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Order delivery</p>
+                                        <h5>{{ $order_delivery }}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
@@ -110,8 +110,8 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Order cancel</p>
+                                        <h5>{{ $order_cancel }}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
@@ -129,132 +129,13 @@
                             <div class="clearfix">
                                 <div class="float-left">
                                     <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
+                                        <p>Total User</p>
+                                        <h5>{{ $user }}</h5>
                                     </div>
                                 </div>
                                 <div class="float-right">
                                     <div class="card_right">
                                         <i class="fas fa-globe bg-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-chart-pie bg-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-database bg-info"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card content start -->
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-hand-pointer bg-danger"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-globe bg-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-chart-pie bg-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card_footer"><span class="text-success mr-2"><i
-                                        class="fas fa-arrow-up"></i>3.48%</span> Since last month</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                        <div class="card p-4 my-2">
-
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <div class="card_left">
-                                        <p>Hello world</p>
-                                        <h5>3254</h5>
-                                    </div>
-                                </div>
-                                <div class="float-right">
-                                    <div class="card_right">
-                                        <i class="fas fa-database bg-info"></i>
                                     </div>
                                 </div>
                             </div>

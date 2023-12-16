@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\Authcontroller;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\dashboardController;
+use App\Http\Controllers\backend\orderController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\sliderController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -75,4 +76,5 @@ Route::prefix('admin/')->middleware(['auth' , 'user'])->name('admin.')->group(fu
 
     //product route
     Route::resource('product', ProductController::class);
+    Route::resource('order', orderController::class);
 });

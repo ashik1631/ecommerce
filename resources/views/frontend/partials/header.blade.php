@@ -44,7 +44,7 @@
                                         <span>Order Track</span></a></li>
                                 @if (auth()->check())
                                 @if (auth()->user()->role===0)
-                                <li class="nav-item"><a class="nav-link" href="{{route('admin.deashboard')}}"><i
+                                <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}"><i
                                             class="far fa-user-circle"></i>
                                         <span>My Deashboard</span></a></li>
                                 @else

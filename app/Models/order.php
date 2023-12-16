@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class order extends Model
 {
     protected $guarded = [];
+
+    public function cart(){
+        return $this->hasMany(cart::class);
+
+    }
 }

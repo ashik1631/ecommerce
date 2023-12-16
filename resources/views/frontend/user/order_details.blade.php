@@ -74,7 +74,9 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->payment_methode }}</td>
-                                        <span class="badge{{ $item->order_status =='processing' ? 'bg-danger' : 'bg-success' }}"><td>{{ $item->order_status }}</td></span>
+                                        <td>
+                                            <span class="badge{{ $item->order_status =='processing' ? 'bg-danger' : 'bg-success' }}">{{ $item->order_status }}</span>
+                                        </td>
 
                                         <td>{{ $item->price }}</td>
                                     </tr>
