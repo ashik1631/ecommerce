@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('price');
             $table->string('payment_methode');
             $table->string('order_status');
-            $table->string('thumbnail');
             $table->timestamps();
         });
     }

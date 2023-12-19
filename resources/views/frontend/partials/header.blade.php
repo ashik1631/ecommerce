@@ -90,25 +90,9 @@
 
                         <!-- search area start -->
                         <div class="col-lg-7 mt-lg-0 mt-4 d-lg-block d-none">
-                            <form class="d-flex search__area">
-                                <!-- all categories start -->
-                                <select class="select__categories">
-                                    <option value="">All Categories</option>
-                                    <option value="">- Fashion</option>
-                                    <option value="">- Laptop</option>
-                                    <option value="">- Men</option>
-                                    <option value="">- Woman</option>
-                                    <option value="">- Dress</option>
-                                    <option value="">- Mobile</option>
-                                    <option value="">- Fashion</option>
-                                    <option value="">- Laptop</option>
-                                    <option value="">- Men</option>
-                                    <option value="">- Woman</option>
-                                    <option value="">- Dress</option>
-                                    <option value="">- Mobile</option>
-                                </select>
-                                <!-- all categories end -->
-                                <input type="search" placeholder="Search...">
+                            <form class="d-flex search__area" action="{{route('search')}}" method="GET">
+                                @csrf
+                                <input type="search" name="search" placeholder="Search...">
                                 <button class="search__btn" type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
@@ -267,6 +251,7 @@
                     </div>
                     <ul>
                         <li><a class="active" href="{{ route('home') }}">HOME</a></li>
+                        <li><a class="active" href="{{ route('search') }}">Product</a></li>
                         <li><a class="active" href="{{route('about')}}">About</a></li>
                         <li><a class="active" href="{{ route('contact') }}">Contact</a></li>
                     </ul>

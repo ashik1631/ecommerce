@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
+use function PHPUnit\Framework\fileExists;
+
 class ProductController extends Controller
 {
     /**
@@ -146,10 +148,15 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        unlink(public_path($product->thumbnail));
+
+        if (file_exists(public_path($product->thumbnail))) {
+            unlink(public_path($product->thumbnail));
+        }
         $multiple_image = json_decode($product->multiple_image);
         foreach ($multiple_image as $img) {
-            unlink(public_path($img));
+            if (file_exists(public_path($img))) {
+                unlink(public_path($img));
+            }
         }
         $product->delete();
         Session::flash('message', 'data delete success');

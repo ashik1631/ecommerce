@@ -113,4 +113,9 @@ class FrontendController extends Controller
         return view('Frontend.user.order_details', compact('orders'));
     }
 
+    public function search(Request $request){
+        $products = product::where('name', 'LIKE', '%'. strtolower(request('search')). '%')->paginate(20);
+        return view('Frontend.search', compact('products'));
+    }
+
 }

@@ -25,6 +25,7 @@ return view('backend.dashboard');
 });*/
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
+Route::get('/search', [FrontendController::class, 'search'])->name('search');
 
 Route::get('/add-to-cart/{id}', [FrontendController::class, 'addToCart'])->name('addToCart');
 Route::get('/cart-remove/{id}', [FrontendController::class, 'cartRemove'])->name('cart.remove');

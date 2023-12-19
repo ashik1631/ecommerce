@@ -33,7 +33,6 @@
                 <tr>
                     <th>Sl.No</th>
                     <th>name</th>
-                    <th>Image</th>
                     <th>phone</th>
                     <th>payment_method</th>
                     <th>order_status</th>
@@ -47,13 +46,14 @@
                 <tr>
                     <td>{{ $key+1 }}</td>
                     <td>{{ $item->name }}</td>
-                    <td><img src="{{ asset($item->thumb) }}" alt="Img"></td>
                     <td>{{ $item->phone }}</td>
                     <td>{{ $item->payment_methode }}</td>
                     <td>
-                        <span class="badge {{ $item->order_status ==='processing' ? 'bg-danger' : ($item->order_status ==='delivery' ? 'bg-success' : 'bg-warning')}}">{{
-                            $item->order_status }}</span>
+                        <span class="badge {{ $item->order_status === 'processing' ? 'bg-danger' : ($item->order_status === 'delivery' ? 'bg-success' : 'bg-warning') }}">
+                            {{ $item->order_status }}
+                        </span>
                     </td>
+
                     <td>{{ $item->price }}</td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="#order{{ $item->id }}" data-toggle="modal">view</a>
