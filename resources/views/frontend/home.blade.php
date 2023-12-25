@@ -17,7 +17,7 @@
                             <!-- single dropdown start -->
                             @foreach ($Categorys as $item)
                             <div class="dropdown">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="{{ url('/search') }}? category={{ $item->id }}">
                                     <img src="{{ asset($item->icon) }}" width="15" alt="icon">
                                     <span class="ms-1">{{ $item->name }}</span>
                                     <span class="right__arrow"><i class="la la-angle-right text-primary"></i></span>
