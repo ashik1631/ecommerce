@@ -251,7 +251,7 @@
                     </div>
                     <ul>
                         <li><a class="active" href="{{ route('home') }}">HOME</a></li>
-                        <li><a class="active" href="{{ route('search') }}">Product</a></li>
+                        <li><a class="active" href="{{ route('product') }}">Product</a></li>
                         <li><a class="active" href="{{route('about')}}">About</a></li>
                         <li><a class="active" href="{{ route('contact') }}">Contact</a></li>
                     </ul>

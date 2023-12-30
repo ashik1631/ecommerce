@@ -129,4 +129,11 @@ class FrontendController extends Controller
         return view('Frontend.search', compact('products'));
     }
 
+    public function product(Request $request){
+
+    $products = product::where('name', 'LIKE', '%'. strtolower(request('product')). '%')->paginate(10);
+        return view('Frontend.search', compact('products'));
+
+    }
+
 }

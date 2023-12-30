@@ -33,6 +33,11 @@
                         class="fa fa-fw fa-rocket text-warning"></i>
                     <span class="mx-2">Order</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Route::is('admin.Home Page.index') ? 'active' : '' }}" href="{{ route('home') }}"><i
+                        class="fa fa-fw fa-rocket text-warning"></i>
+                    <span class="mx-2">Home Page</span></a>
+            </li>
         </ul>
     </nav>
 </div>

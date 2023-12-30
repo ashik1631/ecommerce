@@ -14,6 +14,18 @@
             </div>
             <!-- title end -->
             <div class="row">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_length" id="example_length"><label>Show <select name="example_length"
+                                    aria-controls="example"
+                                    class="custom-select custom-select-sm form-control form-control-sm">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select> entries</label></div>
+                    </div>
+                </div>
                 @foreach ($products as $item)
                 <div class="col-md-3">
                     <!-- single product start -->
@@ -68,12 +80,44 @@
                     <!-- single product end -->
                 </div>
                 @endforeach
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
+                            Showing {{ $products->firstItem() }} to {{ $products->lastItem() }} of {{ $products->total() }} entries
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                            <ul class="pagination">
+                                @if ($products->currentPage() > 1)
+                                    <li class="paginate_button page-item">
+                                        <a href="{{ $products->previousPageUrl() }}" class="page-link">Previous</a>
+                                    </li>
+                                @endif
+
+                                @for ($i = 1; $i <= $products->lastPage(); $i++)
+                                    <li class="paginate_button page-item {{ $i == $products->currentPage() ? 'active' : '' }}">
+                                        <a href="{{ $products->url($i) }}" class="page-link">{{ $i }}</a>
+                                    </li>
+                                @endfor
+
+                                @if ($products->currentPage() < $products->lastPage())
+                                    <li class="paginate_button page-item">
+                                        <a href="{{ $products->nextPageUrl() }}" class="page-link">Next</a>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
     <!-- container area end -->
 </section>
+
+
 <!-- product quick view end -->
 <!-- new product area end -->
 
