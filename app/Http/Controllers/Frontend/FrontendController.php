@@ -118,11 +118,11 @@ class FrontendController extends Controller
         $category = $request->get('category');
         $products = product::when(!empty($search), function($query) use ($search)
         {
-            return $query->where('name', 'LIKE', '%'. strtolower(request('search')). '%')->paginate(20);
+            return $query->where('name', 'LIKE', '%'. strtolower(request('search')). '%');
         })->when(!empty($category), function($query) use ($category)
         {
-            return $query->where('cate_id', $category )->paginate(20);
-        });
+            return $query->where('cate_id', $category );
+        })->paginate(20);
 
         //where code-
         //$products = product::where('name', 'LIKE', '%'. strtolower(request('search')). '%')->paginate(20);
