@@ -49,7 +49,7 @@
                     <td>{{ $item->phone }}</td>
                     <td>{{ $item->payment_methode }}</td>
                     <td>
-                        <span class="badge {{ $item->order_status === 'processing' ? 'bg-danger' : ($item->order_status === 'delivery' ? 'bg-success' : 'bg-warning') }}">
+                        <span class="badge {{ $item->order_status === 'Processing' ? 'bg-danger':($item->order_status === 'Delivery' ? 'bg-success' : 'bg-warning') }}">
                             {{ $item->order_status }}
                         </span>
                     </td>
@@ -86,7 +86,6 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <button class="btn btn-primary w-100" type="submit">Update</button>
-
                                                 </div>
                                             </div>
                                         </form>

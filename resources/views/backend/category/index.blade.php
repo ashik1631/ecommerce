@@ -69,5 +69,4 @@
         </div>
     </div>
     <!-- end -->
-    </div>
 @endsection
