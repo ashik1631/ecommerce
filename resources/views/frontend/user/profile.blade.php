@@ -37,8 +37,6 @@
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Dashboard</a></li>
                                         <li><a class="active-item" href="{{route ('profiles')}}"><i class="las la-angle-double-right me-1"></i> My Profile</a></li>
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Edit Account</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Change Password</a></li>
-                                        <li><a href="{{ route('order_details') }}"><i class="las la-angle-double-right me-1"></i> Order History</a></li>
                                         <li><a href="{{  route('order_details') }}"><i class="las la-angle-double-right me-1"></i> Order Detail</a></li>
                                         <li><a href="{{ route('logout') }}"><i class="las la-angle-double-right me-1"></i> Logout</a></li>
                                     </ul>
@@ -49,7 +47,7 @@
                     </div>
                     <div class="col-lg-9 mt-lg-0 mt-3">
                         <div class="cover__photo">
-                            <img class="img-fluid" src="assets/img/banner/profile-cover.png" alt="img">
+                            <img class="img-fluid" src="{{ asset('assets/frontend/img/testmonial/2.jpg') }}" alt="img">
                             <div class="d-flex justify-content-between">
                                 <div class="user__title ms-3 mt-3">
                                     <h3>{{auth()->user()->name}}</h3>

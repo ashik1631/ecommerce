@@ -37,15 +37,8 @@
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Dashboard</a></li>
                                         <li><a class="active-item" href="{{route ('profiles')}}"><i class="las la-angle-double-right me-1"></i> My Profile</a></li>
                                         <li><a href="#"><i class="las la-angle-double-right me-1"></i> Edit Account</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Change Password</a></li>
                                         <li><a href="{{  route('order_details') }}"><i class="las la-angle-double-right me-1"></i> My Wishlist</a></li>
-                                        <li><a href="order-history.html"><i class="las la-angle-double-right me-1"></i> Order History</a></li>
                                         <li><a href="{{  route('order_details') }}"><i class="las la-angle-double-right me-1"></i> Order Detail</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Billing Agreement</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Product Review</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> My Application</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Subscription</a></li>
-                                        <li><a href="#"><i class="las la-angle-double-right me-1"></i> Order Detail</a></li>
                                         <li><a href="{{ route('logout') }}"><i class="las la-angle-double-right me-1"></i> Logout</a></li>
                                     </ul>
                                 </div>
