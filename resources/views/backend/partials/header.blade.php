@@ -45,7 +45,7 @@
                                     <div class="col-9">
                                         <div class="clearfix">
                                             <div class="float-left">
-                                                <h6>John Doe</h6>
+                                                <h6>Md Ashik</h6>
                                             </div>
                                             <div class="float-right">
                                                 <p class="text-muted text-sm">3 hrs ago</p>
@@ -196,17 +196,11 @@
                         <div class="pro_body">
                             <p>welcome</p>
                             <ul>
-                                <li><a href="#">
+                                <li><a href="{{route('profiles')}}">
                                         <i class="fas fa-user text-success"></i> <span class="mx-2">My Profile</span>
                                     </a></li>
                                 <li><a href="#">
                                         <i class="fas fa-cogs text-primary"></i> <span class="mx-2">Setting</span>
-                                    </a></li>
-                                <li><a href="#">
-                                        <i class="fas fa-calendar-week text-info"></i> <span class="mx-2">Activity</span>
-                                    </a></li>
-                                <li><a href="#">
-                                        <i class="far fa-life-ring text-warning"></i> <span class="mx-2">Support</span>
                                     </a></li>
                                 <hr class="m-0">
                                 <li><a href="{{route('logout')}}">

@@ -14,9 +14,6 @@
                                     class="breadcrumb-link"><span
                                         class="p-1 text-sm text-light bg-success rounded-circle"><i
                                             class="fas fa-home"></i></span> Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Category</li>
-                            <a href="{{ route('admin.category.create') }}" class="btn btn-primary ml-auto">Create
-                                category</a>
                         </ol>
                     </nav>
                 </div>

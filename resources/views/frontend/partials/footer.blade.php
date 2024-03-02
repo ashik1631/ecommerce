@@ -34,7 +34,7 @@
                                     <i class="fas fa-phone-volume"></i>
                                 </div>
                                 <div class="col-10">
-                                    +8801879901545, +8801958155254
+                                    01717719168
                                 </div>
                             </div>
                             <!-- item end -->
@@ -45,7 +45,7 @@
                                     <i class="far fa-envelope"></i>
                                 </div>
                                 <div class="col-10">
-                                    hrventuresbd@gmail.com
+                                    ashik163111@gmail.com
                                 </div>
                             </div>
                             <!-- item end -->
