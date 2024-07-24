@@ -86,7 +86,7 @@ class FrontendController extends Controller
         ]);
         Session::forget('cart');
         Toastr::success('Order press', 'Success');
-        return redirect()->route('profiles');
+        return redirect()->route('order_details');
     }
 
     public function cart_info(){
