@@ -73,6 +73,7 @@ class FrontendController extends Controller
 
         ]);
         $data = $request->all();
+
         $data['user_id']= Auth::id();
         $data['order_status'] = 'processing';
         $data['price'] = $this ->cart_info();
